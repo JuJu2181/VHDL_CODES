@@ -10,4 +10,4 @@ end nand;
 architecture nand_behav of nand is
     begin 
     c <= a nand b;
-    end nand;
+    end nand_behav;
