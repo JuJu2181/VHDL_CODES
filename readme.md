@@ -7,3 +7,4 @@
 - [X] Day 5 - Half adder/subtractor + its testbench and 4 bit full adder/subtractor and its test bench
 - [X] Day 6 - 4 bit multiplier, flowchart implementation and their respective testbenches
 - [X] Day 7 - booths multiplier and its testbench
+- [X] Day 8 - restoring division and its testbench
