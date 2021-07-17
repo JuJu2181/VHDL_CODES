@@ -14,8 +14,8 @@ architecture tb of tb_booths_multiplier is
         );
     end component;
 
-    signal M_in, Q_in: std_logic_vector(5 downto 0);
-    signal P_out: std_logic_vector(11 downto 0);
+    signal M_in, Q_in: std_logic_vector(5 downto 0) := "000000";
+    signal P_out: std_logic_vector(11 downto 0) := "000000000000";
 
     begin
     multinstance: booths_multiplier port map(M_in, Q_in,P_out);

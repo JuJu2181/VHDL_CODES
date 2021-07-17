@@ -18,6 +18,7 @@ begin
     process(M,Q)
     -- here for 5 bit numbers we consider 6 bit Acc, Q and M
     variable Acc: std_logic_vector(5 downto 0); -- 6 bit accumulator
+    variable M1: std_logic_vector(5 downto 0); -- 2's complement of M
     variable Qtemp: std_logic_vector(5 downto 0); -- 6 bit Q
     variable Q1temp: std_logic; -- 1 bit Q-1
     variable Q0Q1: std_logic_vector(1 downto 0); -- 2bit Q0Q-1
@@ -28,13 +29,15 @@ begin
         count := 6; -- for 5 bit numbers count is 6
         Qtemp := Q; -- original Q
         Q1temp := '0'; -- Q-1 initially 0
+        M1 := (not M) + "000001"; -- 2's complement of M 
         ---------- !!!!! Main Loop !!!! -------------------
         while count > 0 loop
             -- concat Q0 and Q-1
             Q0Q1 := Qtemp(0) & Q1temp;
             -- if 10 subtract M from Acc
             if Q0Q1 = "10" then 
-                Acc := Acc - M;
+                -- Acc := Acc - M; -- direct subtraction
+                Acc := Acc + M1; -- 2's complement method
             -- if 01 add M to Acc
             elsif Q0Q1 = "01" then 
                 Acc := Acc + M;

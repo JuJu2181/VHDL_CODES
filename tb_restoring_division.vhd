@@ -15,10 +15,10 @@ architecture tb of tb_restoring_division is
         );
     end component;
 
-    signal Q_in: std_logic_vector(3 downto 0);
-    signal M_in: std_logic_vector(4 downto 0);
-    signal Qt: std_logic_vector(3 downto 0);
-    signal Rm: std_logic_vector(4 downto 0);
+    signal Q_in: std_logic_vector(3 downto 0) := "0000";
+    signal M_in: std_logic_vector(4 downto 0) := "00000";
+    signal Qt: std_logic_vector(3 downto 0) := "0000";
+    signal Rm: std_logic_vector(4 downto 0) := "00000";
 
     begin
     divinstance: restoring_division port map(Q_in, M_in,Qt,Rm);
