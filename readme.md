@@ -8,3 +8,4 @@
 - [X] Day 6 - 4 bit multiplier, flowchart implementation and their respective testbenches
 - [X] Day 7 - booths multiplier and its testbench
 - [X] Day 8 - restoring division and its testbench
+- [X] Day 9 - Non restoring division and its testbench
